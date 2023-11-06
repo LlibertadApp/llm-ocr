@@ -1,3 +1,6 @@
+election_results/electoral_records/
+election_results/electoral_scope_data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
