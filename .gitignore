@@ -1,6 +1,8 @@
 election_results/electoral_records/
 election_results/electoral_scope_data/
 
+processed_images.hdf5
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

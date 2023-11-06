@@ -1,6 +1,7 @@
 class ScrutinyDataProcessor:
-    def __init__(self, json_data, mapeo_codigos_a_indices, imagenes_celdas_extraidas):
+    def __init__(self, json_data, file_name, mapeo_codigos_a_indices, imagenes_celdas_extraidas):
         self.json_data = json_data
+        self.file_name = file_name
         self.mapeo_codigos_a_indices = mapeo_codigos_a_indices
         self.imagenes_celdas_extraidas = imagenes_celdas_extraidas
 
