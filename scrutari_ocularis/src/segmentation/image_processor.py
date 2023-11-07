@@ -88,6 +88,7 @@ class ImageProcessor:
         rectangular_contours = []
         for contour in contours:
             peri = cv2.arcLength(contour, True)
+            #approx = cv2.approxPolyDP(contour, 0.01 * peri, True)
             approx = cv2.approxPolyDP(contour, 0.01 * peri, True)
             if len(approx) == 4:
                 rectangular_contours.append(approx)
@@ -164,3 +165,30 @@ class ImageProcessor:
                 imagen_celda = tabla_grande_recorte[y:y+h, x:x+w]
                 imagenes_celdas_extraidas.append((celda.id, imagen_celda))
         return imagenes_celdas_extraidas
+
+    def combine_cells_by_id(self, celdas_procesadas, indices_celdas_a_extraer, tabla_grande_recorte):
+        # Inicializa los valores máximos y mínimos con los del primer índice
+        if indices_celdas_a_extraer:
+            first_id = indices_celdas_a_extraer[0]
+            first_cell = next((celda for celda in celdas_procesadas if celda.id == first_id), None)
+            if not first_cell:
+                return None  # Si no se encuentra la primera celda, no se puede continuar
+            x_min, y_min = first_cell.posicion[0], first_cell.posicion[1]
+            x_max, y_max = x_min + first_cell.posicion[2], y_min + first_cell.posicion[3]
+        else:
+            return None  # Si no hay índices, no se puede continuar
+
+        # Busca los límites de todas las celdas a extraer
+        for celda in celdas_procesadas:
+            if celda.id in indices_celdas_a_extraer:
+                x, y, w, h = celda.posicion
+                x_min = min(x_min, x)
+                y_min = min(y_min, y)
+                x_max = max(x_max, x + w)
+                y_max = max(y_max, y + h)
+        
+        # Ahora x_min, y_min, x_max, y_max definen el rectángulo que contiene todas las celdas
+        # Extrae esa parte de la imagen
+        imagen_combinada = tabla_grande_recorte[y_min:y_max, x_min:x_max]
+
+        return imagen_combinada

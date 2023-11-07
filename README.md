@@ -1,32 +1,49 @@
-# Scrutari Ocularis
+# llm-ocr Repository
 
-El proyecto Scrutari Ocularis está diseñado para desarrollar un sistema OCR (Reconocimiento Óptico de Caracteres) altamente especializado, destinado a la interpretación y análisis automatizado de telegramas y actas de escrutinio electoral.
+Bienvenidos al repositorio `llm-ocr`, un compendio de herramientas diseñadas para facilitar la segmentación, análisis y extracción de información textual de imágenes mediante técnicas de OCR (Reconocimiento Óptico de Caracteres), utilizando tanto métodos tradicionales como de Aprendizaje Automático (Machine Learning).
 
-## El desarrollo de este sistema se estructura en tres fases fundamentales
+![Visualiza](Visualize_an_abstract_concept_of_a_OCR_processing_electoral_telegram.png)
 
-* Desarrollo de un Modelo de Lenguaje de Aprendizaje Profundo (LLM): Este paso implica la definición y entrenamiento de un modelo de lenguaje avanzado que pueda entender y procesar el contenido textual específico de los documentos electorales.
+## Misión
 
-* Construcción de un Dataset con un 99% de Confiabilidad: En esta etapa se genera un conjunto de datos altamente fiable, el cual servirá para entrenar y validar el modelo, asegurando su precisión en la detección y reconocimiento de caracteres y estructuras textuales relevantes.
+La misión de `llm-ocr` es brindar soluciones accesibles y eficientes para transformar el contenido visual en datos estructurados y manipulables, promoviendo así una mayor integración de la información y facilitando su análisis y procesamiento automatizado.
 
-* Creación de un Dataset Basado en las Actas de las Elecciones Generales: El propósito de este proceso es recopilar y organizar un dataset derivado directamente de las actas de elecciones generales, lo que permitirá al modelo adaptarse y especializarse en el contexto y la terminología específica de estos documentos.
+## Proyectos Contenidos
 
-## El objetivo final
+Dentro del repositorio, encontrarás una serie de proyectos específicos, cada uno enfocado en distintas necesidades y escenarios de OCR:
 
-Es desarrollar un sistema capaz de predecir y transcribir con precisión el contenido de nuevos telegramas provenientes de futuros procesos electorales, facilitando así la tarea de escrutinio y garantizando mayor eficiencia y transparencia en la contienda electoral.
+### Scrutari Ocularis
 
-## significado de ScrutariOcularis
+Ubicado en la carpeta `scrutari_ocularis`, este proyecto se enfoca en la segmentación y análisis de documentos para la obtención de datos precisos a través de OCR. Ideal para el procesamiento de formularios, tablas y cualquier tipo de documento estructurado donde se requiera extraer información textual.
 
-**Scrutari** es una forma de **scrutiny** '*escrutinio*' en latín, y **Ocularis** implica *visión*, adecuado para OCR.
+Si estás interesado por mas, por favor revisa [Scrutari Ocularis](./scrutari_ocularis/README.md).
 
-## Segmentación de Telegramas para la Generación de Dataset Electoral
+#### Características de Scrutari Ocularis:
 
-Este módulo del proyecto Scrutari Ocularis se centra en el procesamiento y análisis detallado de imágenes de tablas estructuradas, con el objetivo principal de segmentar y extraer celdas individuales de las actas de elecciones generales. Mediante técnicas avanzadas de visión por computadora, se identifican y aíslan los componentes tabulares específicos dentro de los documentos digitalizados, lo que facilita la recopilación de datos precisos y su posterior incorporación en un dataset.
+- Segmentación avanzada de celdas y tablas.
+- Análisis de contenido mediante técnicas de OCR tradicional.
+- Incorporación de modelos de Machine Learning para la mejora continua en la detección y reconocimiento de caracteres.
 
-Cada celda segmentada es cuidadosamente recortada y preparada para su análisis OCR, garantizando la extracción fiable de la información textual que contienen. Este proceso meticuloso no solo mejora la calidad del dataset resultante sino que también optimiza la fase de entrenamiento del modelo LLM, proporcionando una base sólida para la predicción y reconocimiento efectivo de los datos en nuevos documentos de escrutinio.
+### [Otros Proyectos]
 
-La estrategia de segmentación es vital para superar los desafíos presentados por la diversidad de formatos y la calidad de las imágenes de las actas, asegurando que el sistema pueda operar con un alto grado de exactitud en condiciones reales. Con este enfoque, Scrutari Ocularis se prepara para convertirse en una herramienta esencial en el proceso de digitalización y análisis electoral, contribuyendo significativamente a la integridad y eficiencia del escrutinio.
+// Describe aquí otros proyectos contenidos en el repositorio con un formato similar al de Scrutari Ocularis.
 
-[Ver el resultado en segmentation.ipynb](./segmentation.ipynb)
+## Uso y Contribuciones
 
+Instrucciones detalladas sobre cómo utilizar y contribuir a cada uno de los proyectos se encuentran en sus respectivas carpetas y documentación.
 
+Invitamos a la comunidad a colaborar con `llm-ocr`, ya sea mediante la mejora de código existente, la sugerencia de nuevas funcionalidades o la creación de proyectos relacionados. Cualquier contribución que ayude a alcanzar nuestra misión es bienvenida.
 
+Si estás interesado en contribuir a este proyecto, por favor revisa [Cómo contribuir](CONTRIBUTING.md).
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - vea el archivo [`LICENSE`](LICENSE) para más detalles.
+
+## Contacto
+
+Para preguntas o colaboraciones, por favor abre un issue en este repositorio o contacta a los mantenedores directamente.
+
+---
+
+Agradecemos tu interés y apoyo al proyecto `llm-ocr`. Juntos, podemos hacer que el OCR sea más accesible y potente para todos.

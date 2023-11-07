@@ -1,5 +1,7 @@
 {
     "python.analysis.extraPaths": [
-        "./src/segmentation"
+        "./scrutari_ocularis/src/data_management",
+        "./scrutari_ocularis/src/segmentation",
+        "./scrutari_ocularis/src/validation_modules"
     ]
 }

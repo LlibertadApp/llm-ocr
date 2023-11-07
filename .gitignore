@@ -1,7 +1,9 @@
-election_results/electoral_records/
-election_results/electoral_scope_data/
+scrutari_ocularis/election_results/electoral_records/
+scrutari_ocularis/election_results/electoral_scope_data/
+scrutari_ocularis/election_results/files-examples/
 
-processed_images.hdf5
+# Imagen procesada que se guarda
+scrutari_ocularis/processed_images.hdf5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
