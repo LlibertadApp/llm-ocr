@@ -4,18 +4,12 @@ import numpy as np
 from celda import Celda
 
 class ImageProcessor:
-    def __init__(self, template_path, image_path):
-        self.template_path = template_path
-        self.image_path = image_path
-        self.img_template = None
-        self.img = None
+    def __init__(self, img_template, img):
+        self.img_template = img_template
+        self.img = img
         self.aligned_image = None
 
     def read_and_align_images(self):
-        # Leer las imágenes
-        self.img_template = cv2.imread(self.template_path, cv2.IMREAD_GRAYSCALE)
-        self.img = cv2.imread(self.image_path, cv2.IMREAD_GRAYSCALE)
-
         # Alinear la imagen usando SIFT y FLANN
         sift = cv2.SIFT_create()
         kp1, des1 = sift.detectAndCompute(self.img_template, None)
@@ -168,6 +162,13 @@ class ImageProcessor:
 
     def combine_cells_by_id(self, celdas_procesadas, indices_celdas_a_extraer, tabla_grande_recorte):
         # Inicializa los valores máximos y mínimos con los del primer índice
+        if not indices_celdas_a_extraer:
+            print("No se proporcionaron índices de celdas para extraer.")
+            return None
+        if not isinstance(tabla_grande_recorte, np.ndarray):
+            print("El recorte de la tabla grande no es un array de NumPy.")
+            return None
+
         if indices_celdas_a_extraer:
             first_id = indices_celdas_a_extraer[0]
             first_cell = next((celda for celda in celdas_procesadas if celda.id == first_id), None)
@@ -190,5 +191,9 @@ class ImageProcessor:
         # Ahora x_min, y_min, x_max, y_max definen el rectángulo que contiene todas las celdas
         # Extrae esa parte de la imagen
         imagen_combinada = tabla_grande_recorte[y_min:y_max, x_min:x_max]
+
+        if not isinstance(imagen_combinada, np.ndarray):
+            print("La imagen combinada no es un array de NumPy.")
+            return None
 
         return imagen_combinada

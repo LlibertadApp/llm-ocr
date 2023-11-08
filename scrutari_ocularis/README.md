@@ -28,5 +28,59 @@ La estrategia de segmentación es vital para superar los desafíos presentados p
 
 [Ver el resultado en segmentation.ipynb](./segmentation.ipynb)
 
+# segmentation_cropping
 
+## Descripción
+
+Este proyecto es una función de AWS Lambda para el alineamiento y recorte de imágenes, específicamente pensado para telegramas. La función ajusta las imágenes basándose en los parámetros recibidos, realiza un recorte inteligente y luego guarda los resultados en un bucket de Amazon S3.
+
+
+## Características
+
+- Alineamiento automático de imágenes basado en plantillas.
+- Recorte de imágenes basado en áreas de interés.
+- Almacenamiento de imágenes resultantes en Amazon S3.
+
+## Configuración de Lambda
+
+Antes de desplegar la función, asegúrate de configurar las siguientes variables de entorno en la consola de AWS Lambda o en tu archivo de configuración:
+
+- `BUCKET_OCR_IMAGES`: Nombre del bucket de S3 para imágenes procesadas.
+- `BOI_ENDPOINT_URL`: URL del endpoint para el servicio compatible con S3 (como MinIO).
+- `BOI_ACCESS`: Clave de acceso para el servicio compatible con S3.
+- `BOI_SECRET`: Clave secreta para el servicio compatible con S3.
+
+Estas variables se utilizan para configurar el cliente de S3 dentro de la función de Lambda y deben ser establecidas para que la función pueda interactuar correctamente con el servicio de almacenamiento.
+
+## Evento de Prueba
+
+Un evento de prueba para la función Lambda puede ser configurado como sigue:
+
+```json
+{
+  "code": "mock_telegrama_0",
+  "image_path": "telegramas/mock_telegrama_0.jpg",
+  "template_path": "templates/AE-150-23-telegrama.tiff"
+}
+```
+
+Este evento simula una invocación de Lambda donde se proporciona la información necesaria para procesar la imagen del telegrama.
+
+## Contexto de Prueba
+
+Un contexto de prueba para simular la ejecución en un entorno local puede definirse en un script de Python como se muestra en el ejemplo de prueba proporcionado. Esto es útil para pruebas locales antes de desplegar la función en AWS.
+
+## Entorno de Prueba
+
+Para probar la función de Lambda localmente, puedes utilizar el Jupyter Notebook segmentation_cropping.ipynb. Este entorno de pruebas te permite cargar imágenes, ejecutar la función y visualizar los resultados sin necesidad de desplegar la función en AWS.
+
+## Scripts de Construcción
+
+El script `build-lambda-sc-package.ps1` se utiliza para preparar el paquete de despliegue de la función Lambda. Este script instala todas las dependencias, copia los archivos necesarios al directorio de construcción y crea un archivo `.zip` listo para ser desplegado en AWS Lambda.
+
+Para ejecutar el script de construcción, utiliza el siguiente comando en PowerShell:
+
+```powershell
+./build-lambda-sc-package.ps1
+```
 
