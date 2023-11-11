@@ -6,7 +6,7 @@ import cv2
 import traceback
 import numpy as np
 from io import BytesIO
-from segmentation.image_processor import ImageProcessor
+from segmentation.image_processor_s3 import ImageProcessorS3
 from segmentation.telegrama_ballotage import TelegramaBallotage
 from segmentation.template_ballotage import TemplateBallotage
 

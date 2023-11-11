@@ -3,7 +3,7 @@ import numpy as np
 
 from celda import Celda
 
-class ImageProcessor:
+class ImageProcessorS3:
     def __init__(self, img_template, img):
         self.img_template = img_template
         self.img = img

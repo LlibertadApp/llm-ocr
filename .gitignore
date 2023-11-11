@@ -4,6 +4,7 @@ scrutari_ocularis/election_results/files-examples/
 scrutari_ocularis/files-examples/
 scrutari_ocularis/files-examples/ballotage/
 scrutari_ocularis/files-examples/save/
+scrutari_ocularis/log/
 
 # Imagen procesada que se guarda
 scrutari_ocularis/processed_images.hdf5

@@ -140,7 +140,7 @@ def train_model(args):
 
     model = ScrutariOcularisModel().to(device) #NumericClassifier(num_classes=999).to(device)
 
-    name_file_model = "ocr_CustomModel.pt"
+    name_file_model = "scrutari_ocularis_model_v_1.pt"
 
     if os.path.exists(name_file_model):
         model.load_state_dict(torch.load(name_file_model))
