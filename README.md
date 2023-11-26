@@ -1,3 +1,15 @@
+# INFO
+
+**Español:** Este proyecto y/o repositorio, al igual que todos los demás, está liberado bajo la licencia AGPL. Para más información, visita este enlace: [README](https://github.com/LlibertadApp/.github/blob/main/profile/README.md).
+
+**English** This project and/or repository, like all others, is released under the AGPL license. For more information, please visit this link: [README](https://github.com/LlibertadApp/.github/blob/main/profile/README.md).
+
+
+
+
+
+
+
 # llm-ocr Repository
 
 Bienvenidos al repositorio `llm-ocr`, un compendio de herramientas diseñadas para facilitar la segmentación, análisis y extracción de información textual de imágenes mediante técnicas de OCR (Reconocimiento Óptico de Caracteres), utilizando tanto métodos tradicionales como de Aprendizaje Automático (Machine Learning).
@@ -38,7 +50,7 @@ Si estás interesado en contribuir a este proyecto, por favor revisa [Cómo cont
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT - vea el archivo [`LICENSE`](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia AGPL - vea el archivo [`LICENSE`](LICENSE) para más detalles.
 
 ## Contacto
 
